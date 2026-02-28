@@ -97,42 +97,7 @@ npm run build
 npm run preview
 ```
 
-## 🌐 部署说明
 
-### 服务器部署（宝塔面板）
-
-1. **构建项目**
-   ```bash
-   npm run build
-   ```
-
-2. **上传文件**
-   - 将 `dist/` 目录下的所有文件上传到服务器网站目录（如 `/www/wwwroot/your-domain/blog/`）
-
-3. **配置 Nginx 反向代理**
-   - 在宝塔面板中配置反向代理：`/api` → `http://127.0.0.1:9000`
-   - 确保 json-server 在服务器上运行（建议使用 pm2 管理）
-
-4. **启动后端服务**
-   ```bash
-   pm2 start "npx json-server@0.16.3 --watch db.json --port 9000 --host 127.0.0.1" --name blog-api
-   pm2 save
-   ```
-
-5. **配置伪静态**（Nginx）
-   ```nginx
-   location /blog {
-       try_files $uri $uri/ /blog/index.html;
-   }
-   ```
-
-### 环境配置
-
-项目会根据运行环境自动切换 API 地址：
-- **开发环境**: `http://localhost:9000`
-- **生产环境**: `/api`（通过 Nginx 反向代理）
-
-配置文件：`src/config.js`
 
 ## 📝 API 接口
 
@@ -143,14 +108,4 @@ npm run preview
 - `POST /blogs` - 创建新博客
 - `DELETE /blogs/:id` - 删除博客
 
-## 🤝 贡献
 
-欢迎提交 Issue 和 Pull Request！
-
-## 📄 许可证
-
-MIT License
-
----
-
-**在线演示**: [http://62.234.61.253/blog/](http://62.234.61.253/blog/)
