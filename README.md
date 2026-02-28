@@ -46,59 +46,6 @@ blog/
 └── package.json             # 项目依赖配置
 ```
 
-## 🚀 快速开始
-
-### 环境要求
-
-- Node.js >= 16.0.0（推荐 18+）
-- npm >= 7.0.0
-
-### 安装依赖
-
-```bash
-npm install
-```
-
-### 启动开发服务器
-
-```bash
-npm start
-# 或
-npm run dev
-```
-
-访问 [http://localhost:3000](http://localhost:3000) 查看应用。
-
-### 启动后端 API 服务器
-
-在另一个终端窗口中：
-
-```bash
-npx json-server --watch data/db.json --port 9000
-```
-
-或者使用旧版本（兼容 Node 16）：
-
-```bash
-npx json-server@0.16.3 --watch data/db.json --port 9000
-```
-
-### 构建生产版本
-
-```bash
-npm run build
-```
-
-构建产物将输出到 `dist/` 目录。
-
-### 预览生产构建
-
-```bash
-npm run preview
-```
-
-
-
 ## 📝 API 接口
 
 后端使用 json-server，提供以下 RESTful API：
